@@ -3,10 +3,14 @@
 import { useState } from 'react';
 import { Button, Input } from '@nextui-org/react';
 import { getFullUrl } from '../utils/urlHelper';
-import { Bot, Github, Linkedin, Mail, Twitter} from 'lucide-react';
+import { Bot, Github, Linkedin, Mail, Send, Twitter} from 'lucide-react';
+// import gifSrc from '../path-to-your-gif-file.gif';
+import Image from 'next/image';
+
 
 export default function Home() {
   const [url, setUrl] = useState<string>('');
+  const gif = require('../../public/webchatai.gif') as string;
 
   const handleSubmit = () => {
     if (url) {
@@ -39,27 +43,38 @@ export default function Home() {
           Enter your website URL below to instantly transform it into an interactive AI chatbox.
         </p>
         
-        <div className="flex flex-row space-x-2 ">
+        <div className="flex flex-row space-x-2 items-center">
           <Input 
             placeholder="Enter your website URL" 
             value={url} 
             onChange={(e) => setUrl(e.target.value)}
-            className="w-80 text-white placeholder-gray-400 text-[17px]" 
+            className="lg:w-80 w-72 text-white placeholder-gray-400 text-[17px]" 
           />
-          <Button onClick={handleSubmit} className="bg-indigo-600 hover:bg-indigo-700 text-white">Submit</Button>
+          <Button onClick={handleSubmit} className="hidden lg:flex bg-indigo-600 hover:bg-indigo-700 text-white"> 
+            Submit
+          </Button>
+          <Button onClick={handleSubmit} className="lg:hidden flex bg-indigo-600 hover:bg-indigo-700 text-white"> 
+            <Send />
+          </Button>
         </div>
       </main>
 
       {/* Video Preview */}
-      <section className="mt-16 w-full max-w-4xl px-4">
+      <section className="mt-10 w-full max-w-4xl px-4">
         <div className="aspect-w-16 aspect-h-9">
-          <iframe
-            src="your-video-url-here"
+          {/* <iframe
+            src="https://web.facebook.com/share/v/TtoWZ4bm56YCDmPm/"
             frameBorder="0"
-            allow="autoplay; fullscreen"
+            allow="autoplay; fullscreen"  
             allowFullScreen
+            
+          ></iframe> */}
+          <img src={gif} alt="" />
+          <Image 
+            src={gif}
+            alt="Description of the image"
             className="w-full h-full rounded-lg shadow-lg"
-          ></iframe>
+             />
         </div>
       </section>
 
