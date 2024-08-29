@@ -44,7 +44,7 @@ export default function Home() {
             placeholder="Enter your website URL" 
             value={url} 
             onChange={(e) => setUrl(e.target.value)}
-            className="w-80 text-white placeholder-gray-400" 
+            className="w-80 text-white placeholder-gray-400 text-[17px]" 
           />
           <Button onClick={handleSubmit} className="bg-indigo-600 hover:bg-indigo-700 text-white">Submit</Button>
         </div>

@@ -2,7 +2,8 @@
 
 import { Button, Textarea } from "@nextui-org/react"
 import { Send } from "lucide-react"
-import { type useChat } from "ai/react"
+// import { type useChat } from "ai/react"
+import { useChat } from "ai/react"
 
 type HandleInputChange = ReturnType<typeof useChat>["handleInputChange"]
 type HandleSubmit = ReturnType<typeof useChat>["handleSubmit"]
@@ -35,12 +36,12 @@ export const ChatInput = ({ handleInputChange, handleSubmit, input, setInput }: 
                                     }
                                 }}
                                 placeholder="Enter your question..."
-                                className="resize-none bg-zinc-800 hover:bg-zinc-900 rounded-xl text-base w-full"
+                                className="resize-none bg-zinc-800 hover:bg-zinc-900 rounded-xl text-[17px] w-full"
                             />
                             <Button
                                 size="sm"
                                 type="submit"
-                                className="absolute z-10 border-border bg-zinc-900 right-2 bottom-2"
+                                className="absolute z-10 border-border bg-zinc-900 right-2 top-2"
                             >
                                 <Send className="size-4" />
                             </Button>

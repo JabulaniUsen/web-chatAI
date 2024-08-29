@@ -19,7 +19,7 @@ export const Messages = ({ messages }: MessagesProps) => {
     }, [messages])
 
     return (
-        <div className="flex max-h-[calc(100vh-3.5rem-7rem)] flex-1 flex-col overflow-y-auto">
+        <div className="flex lg:max-h-[calc(100vh-3.5rem-7rem)] max-h-[calc(90vh-3.5rem-7rem)] flex-1 flex-col overflow-y-auto">
             {messages.length ? (
                 messages.map((message, i) => (
                     <Message
