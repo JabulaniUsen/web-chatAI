@@ -30,7 +30,7 @@ export default function Home() {
         <Button 
         onClick={() => window.location.href = "https://usen-obong.vercel.app/"} 
           className=" rounded-full bg-indigo-600 hover:bg-indigo-700 text-white">
-            Meet the make
+            Meet the maker
         </Button>
       </header>
 
@@ -62,13 +62,7 @@ export default function Home() {
       {/* Video Preview */}
       <section className="mt-10 w-full max-w-4xl px-4">
         <div className="aspect-w-16 aspect-h-9">
-          {/* <iframe
-            src="https://web.facebook.com/share/v/TtoWZ4bm56YCDmPm/"
-            frameBorder="0"
-            allow="autoplay; fullscreen"  
-            allowFullScreen
-            
-          ></iframe> */}
+
           <img src={gif} alt="" />
           <Image 
             src={gif}
